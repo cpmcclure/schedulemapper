@@ -1,6 +1,8 @@
+// Notes: Make class for shifts, days and employees. Use shifts object in creation of day objects
+
 const cMcclure = {
-    firstName: Chris,
-    lastName: McClure,
+    firstName: 'Chris',
+    lastName: 'McClure',
     maxDays: 5,
     requestedHours: 35,
     minHours: 25,
@@ -14,8 +16,8 @@ const cMcclure = {
 }
 
 const dOtton = {
-    firstName: Dustin,
-    lastName: Otton,
+    firstName: 'Dustin',
+    lastName: 'Otton',
     maxDays: 3,
     requestedHours: 21,
     minHours: 18,
@@ -29,8 +31,8 @@ const dOtton = {
 }
 
 const jGrimes = {
-    firstName: Jess,
-    lastName: Grimes,
+    firstName: 'Jess',
+    lastName: 'Grimes',
     maxDays: 3,
     requestedHours: 21,
     minHours: 18,
@@ -44,8 +46,8 @@ const jGrimes = {
 }
 
 const lPerry = {
-    firstName: Lilliebrooke,
-    lastName: Perry,
+    firstName: 'Lilliebrooke',
+    lastName: 'Perry',
     maxDays: 2,
     requestedHours: 15,
     minHours: 6,
@@ -59,8 +61,8 @@ const lPerry = {
 }
 
 const cHaze = {
-    firstName: Cass,
-    lastName: Haze,
+    firstName: 'Cass',
+    lastName: 'Haze',
     maxDays: 5,
     requestedHours: 35,
     minHours: 25,
@@ -74,8 +76,8 @@ const cHaze = {
 }
 
 const openBar = {
-    startTime: "06:30",
-    endTime: "14:00",
+    startTime: '06:30',
+    endTime: '14:00',
     length: 7.5,
 }
 
@@ -113,108 +115,270 @@ const sunday = {
     day: 'sun',
     shifts: {
         openBar: {
-            name: 'openBar',
-            employee: '',
-            startTime: "06:30",
-            endTime: "14:00",
-            altStartTime: "07:30",
-            altEndTime: "15:00",
-            length: 7.5,
+            available: [],
+            bar: true,
+            working: '',
         },
         openReg: {
-            name: 'openReg',
-            employee: '',
-            startTime: "06:30",
-            endTime: "14:00",
-            altStartTime: "07:30",
-            altEndTime: "15:00",
-            length: 7.5,
+            available: [],
+            bar: false,
+            working: '',
         },
         float: {
-            name: 'float',
-            employee: '',
-            startTime: "06:30",
-            endTime: "14:00",
-            altStartTime: "07:30",
-            altEndTime: "15:00",
-            length: 7.5,
+            available: [],
+            bar: false,
+            working: '',
         },
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const monday = {
     day: 'mon',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const tuesday = {
     day: 'tue',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const wednesday = {
     day: 'wed',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const thursday = {
     day: 'thu',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const friday = {
     day: 'fri',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const saturday = {
     day: 'sat',
     shifts: {
-        openBar: '',
-        openReg: '',
-        float: '',
-        closeBar: '',
-        closeReg: '',
-        closeFloat: '',
+        openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
+            available: [],
+            bar: true,
+            working: '',
+        },
+        openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
+            available: [],
+            bar: false,
+            working: '',
+        },
+        float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
+            available: [],
+            bar: true,
+            working: '',
+        },
+        closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
+            available: [],
+            bar: false,
+            working: '',
+        },
+        closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
+            available: [],
+            bar: false,
+            working: '',
         }
+    }
 }
 
 const employees = [cHaze, cMcclure, dOtton, jGrimes, lPerry]
@@ -222,9 +386,16 @@ const shifts = [openBar, openReg, float, closeBar, closeFloat, closeReg]
 
 let schedule = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
 
+function findShifts(employee, day) {
+    let shifts = Object.keys(day.shifts)
+    shifts.forEach(shift => {
+        if(employee.reqShifts.includes(day.shifts[shift].name)) day.shifts[shift].available.push(employee.name) 
+        })
+    }
+
 for (let i = 0; i < schedule.length; i++) {
    let available = employees.filter(e => e.reqDays.includes(schedule[i].day))
-   for (const employee in schedule) {
-    // let employees.find(e => e.)
+   for (const employee in available) {
+    findShifts(employee, schedule[i])
    }
 }
