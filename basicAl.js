@@ -1,5 +1,13 @@
 // Notes: Make class for shifts, days and employees. Use shifts object in creation of day objects
 
+function findShifts(employee, day) {
+    let shifts = Object.keys(day.shifts)
+    shifts.forEach(shift => {
+        let currentShift = day.shifts[shift]
+        if(employee.reqShifts.includes(currentShift.name)) currentShift.available.push(employee.firstName)
+    })
+}
+
 const cMcclure = {
     firstName: 'Chris',
     lastName: 'McClure',
@@ -52,8 +60,8 @@ const lPerry = {
     requestedHours: 15,
     minHours: 6,
     maxHours: 15,
-    daysAvailable: [mon, tue, wed],
-    reqDays: [tue, wed],
+    daysAvailable: ['mon', 'tue', 'wed'],
+    reqDays: ['tue', 'wed'],
     twoDayWeekend: true,
     shiftsAvailable: ['open', 'float', 'close'],
     reqShifts: ['open', 'float', 'close'],
@@ -67,8 +75,8 @@ const cHaze = {
     requestedHours: 35,
     minHours: 25,
     maxHours: 40,
-    daysAvailable: [sun, tue, wed, thu, fri, sat],
-    reqDays: [tue, wed],
+    daysAvailable: ['sun', 'tue', 'wed', 'thu', 'fri', 'sat'],
+    reqDays: ['tue', 'wed'],
     twoDayWeekend: true,
     shiftsAvailable: ['open', 'float', 'close'],
     reqShifts: ['open', 'float', 'close'],
@@ -115,31 +123,49 @@ const sunday = {
     day: 'sun',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -151,31 +177,49 @@ const monday = {
     day: 'mon',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -187,31 +231,49 @@ const tuesday = {
     day: 'tue',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -223,31 +285,49 @@ const wednesday = {
     day: 'wed',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -259,31 +339,49 @@ const thursday = {
     day: 'thu',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -295,31 +393,49 @@ const friday = {
     day: 'fri',
     shifts: {
         openBar: {
+            name: 'openBar',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: true,
             working: '',
         },
         openReg: {
+            name: 'openReg',
+            startTime: '06:30',
+            endTime: '14:00',
             available: [],
             bar: false,
             working: '',
         },
         float: {
+            name: 'float',
+            startTime: '07:30',
+            endTime: '16:00',
             available: [],
             bar: false,
             working: '',
         },
         closeBar: {
+            name: 'closeBar',
+            startTime: '09:30',
+            endTime: '18:00',
             available: [],
             bar: true,
             working: '',
         },
         closeReg: {
+            name: 'closeReg',
+            startTime: '010:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
         },
         closeFloat: {
+            name: 'closeFloat',
+            startTime: '10:30',
+            endTime: '18:00',
             available: [],
             bar: false,
             working: '',
@@ -382,20 +498,19 @@ const saturday = {
 }
 
 const employees = [cHaze, cMcclure, dOtton, jGrimes, lPerry]
-const shifts = [openBar, openReg, float, closeBar, closeFloat, closeReg]
+// const shifts = [openBar, openReg, float, closeBar, closeFloat, closeReg]
 
 let schedule = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
 
-function findShifts(employee, day) {
-    let shifts = Object.keys(day.shifts)
-    shifts.forEach(shift => {
-        if(employee.reqShifts.includes(day.shifts[shift].name)) day.shifts[shift].available.push(employee.name) 
-        })
-    }
+console.log(schedule.length)
+
 
 for (let i = 0; i < schedule.length; i++) {
-   let available = employees.filter(e => e.reqDays.includes(schedule[i].day))
-   for (const employee in available) {
-    findShifts(employee, schedule[i])
-   }
+   let availableEmployees = employees.filter(e => e.reqDays.includes(schedule[i].day))
+   availableEmployees.forEach(employee => findShifts(employee, schedule[i]))
 }
+
+schedule.forEach(day => {
+    let shiftsArray = Object.keys(day.shifts)
+    shiftsArray.forEach(shift => console.log(day.shifts[shift].available))
+})
