@@ -5,6 +5,7 @@ function findShifts(employee, day) {
     shifts.forEach(shift => {
         let currentShift = day.shifts[shift]
         if(employee.reqShifts.includes(currentShift.name)) currentShift.available.push(employee.firstName)
+        currentShift.available.filter()
     })
 }
 
@@ -121,6 +122,7 @@ const closeFloat = {
 
 const sunday = {
     day: 'sun',
+    date: '',
     shifts: {
         openBar: {
             name: 'openBar',
@@ -509,8 +511,17 @@ for (let i = 0; i < schedule.length; i++) {
    let availableEmployees = employees.filter(e => e.reqDays.includes(schedule[i].day))
    availableEmployees.forEach(employee => findShifts(employee, schedule[i]))
 }
-
 schedule.forEach(day => {
     let shiftsArray = Object.keys(day.shifts)
-    shiftsArray.forEach(shift => console.log(day.shifts[shift].available))
+    shiftsArray.forEach(shift => {
+        let pickShift = day.shifts[shift]
+        let random = Math.random() * pickShift.available.length
+        day.shifts[shift].available[random]
+    })
 })
+
+// Algorithm ideas:
+// For each day, add employees to a requested and available array
+// (allow mechanism that allows employees to request days off, added to their object)
+// then sort employees into arrays for each time period (open, float, close) within each day
+// within those time periods, assign employees to avoid overlap. Check if bartrained is true
