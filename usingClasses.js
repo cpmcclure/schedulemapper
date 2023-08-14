@@ -8,8 +8,9 @@ class Employee {
 }
 
 class Shift {
-    constructor(shiftName, shiftStart, shiftEnd, bar) {
+    constructor(shiftName, shiftType, shiftStart, shiftEnd, bar) {
         this.shiftName = shiftName
+        this.shiftType = shiftType
         this.shiftStart = shiftStart
         this.shiftEnd = shiftEnd
         this.bar = bar
@@ -27,3 +28,4 @@ class WorkDay {
         this.available = []
     }
 }
+
