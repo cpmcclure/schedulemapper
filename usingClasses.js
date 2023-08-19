@@ -14,8 +14,8 @@ class Shift {
         this.shiftStart = shiftStart
         this.shiftEnd = shiftEnd
         this.bar = bar
-        this.available = this.available
-        this.requested = requested
+        this.requested = []
+        this.available = []
     }
 }
 
